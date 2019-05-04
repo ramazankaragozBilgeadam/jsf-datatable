@@ -9,7 +9,7 @@ import java.util.List;
 public class PersonelService implements IPersonelService {
 
     private List<Personel> personelList=new ArrayList<Personel>();
-
+    private Long idGenerator=0L;
 
     public void kaydet(Personel personel) {
 
@@ -17,7 +17,7 @@ public class PersonelService implements IPersonelService {
 
             Personel yeniPersonel=new Personel();
 
-            yeniPersonel.setId(personel.getId());
+            yeniPersonel.setId(idGenerator);
             yeniPersonel.setDepartman(personel.getDepartman());
             yeniPersonel.setIseGirisTarih(personel.getIseGirisTarih());
             yeniPersonel.setMaas(personel.getMaas());
@@ -31,6 +31,8 @@ public class PersonelService implements IPersonelService {
             yeniPersonel.setTelNo(personel.getTelNo());
             yeniPersonel.setSicilNo(personel.getSicilNo());
             yeniPersonel.setUnvan(personel.getUnvan());
+
+            idGenerator++;
 
             personelList.add(yeniPersonel);
 

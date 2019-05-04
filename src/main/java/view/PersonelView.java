@@ -16,12 +16,20 @@ public class PersonelView {
     private Personel personel;
     private PersonelService personelService;
     private List<Personel> personelList;
+    private List<String> departmanList;
 
     @PostConstruct
     public void init(){
         personel=new Personel();
-        personelService=new PersonelService();
+        personelService=PersonelService.getInstance();
         personelList=new ArrayList<>();
+        departmanList=new ArrayList<>();
+
+        departmanList.add("Arge");
+        departmanList.add("İnsan Kaynakları");
+        departmanList.add("Yönetim");
+        departmanList.add("Mali İşler");
+        departmanList.add("Hizmetli");
     }
 
     /**
@@ -56,5 +64,13 @@ public class PersonelView {
 
     public void setPersonelList(List<Personel> personelList) {
         this.personelList = personelList;
+    }
+
+    public List<String> getDepartmanList() {
+        return departmanList;
+    }
+
+    public void setDepartmanList(List<String> departmanList) {
+        this.departmanList = departmanList;
     }
 }

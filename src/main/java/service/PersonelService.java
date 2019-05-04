@@ -10,6 +10,22 @@ public class PersonelService implements IPersonelService {
 
     private List<Personel> personelList=new ArrayList<Personel>();
     private Long idGenerator=1L;
+    private static PersonelService instance;
+
+    /**
+     * PersonelService nesnesinin birkere new anahtar sözcüğü ile oluşturulması için
+     * Singleton Design patter uygulanıyor.
+     * Nesnenin Birkere oluşmasından sorumlu tasarım desenidir.
+     * @return
+     */
+    public static PersonelService getInstance() {
+
+        if (instance==null){
+            instance=new PersonelService();
+        }
+
+        return instance;
+    }
 
     public void kaydet(Personel personel) {
 

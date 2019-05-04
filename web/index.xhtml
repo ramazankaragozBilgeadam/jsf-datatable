@@ -66,12 +66,12 @@
                 <p:message for="sicil_input" display="text,icon"/>
 
                 <p:outputLabel value="Departman:"/>
-                <p:inputText id="departman_input"
-                             maxlength="15"
-                             required="true"
-                             requiredMessage="Bu Alan Zorunludur."
-                             value="#{personelView.personel.departman}"
-                />
+                <p:selectOneMenu id="departman_input" value="#{personelView.personel.departman}">
+                    <f:selectItem noSelectionOption="true"
+                                  itemLabel="Seçiniz.."
+                                  itemValue="#{null}"/>
+                    <f:selectItems value="#{personelView.departmanList}"/>
+                </p:selectOneMenu>
                 <p:message for="departman_input" display="text,icon"/>
 
                 <p:outputLabel value="Unvan:"/>
@@ -114,6 +114,10 @@
 
                 <p:column headerText="Telefon Numarası">
                     <h:outputText value="#{per.telNo}"/>
+                </p:column>
+
+                <p:column headerText="Departman">
+                    <h:outputText value="#{per.departman}"/>
                 </p:column>
 
             </p:dataTable>

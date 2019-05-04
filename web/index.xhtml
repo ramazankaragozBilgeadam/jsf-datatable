@@ -84,41 +84,40 @@
                 <p:message for="unvan_input" display="text,icon"/>
 
 
-
             </p:panelGrid>
 
             <p:commandButton value="Kaydet"
-                             update="personel_tanimla_grid growl"
+                             update="personel_tanimla_grid growl :liste_form:personel_listesi"
                              actionListener="#{personelView.onKaydet}"/>
         </h:form>
     </p:panel>
 
     <p:panel>
-        <p:dataTable id="personel_listesi" var="per" value="#{personelView.personelList}">
+        <h:form id="liste_form">
+            <p:dataTable id="personel_listesi" var="per" value="#{personelView.personelList}">
 
-            <p:column headerText="Id">
-                <h:outputText value="#{per.id}"/>
-            </p:column>
+                <p:column headerText="Id">
+                    <h:outputText value="#{per.id}"/>
+                </p:column>
 
-            <p:column headerText="Adı">
-                <h:outputText value="#{per.ad}"/>
-            </p:column>
+                <p:column headerText="Adı">
+                    <h:outputText value="#{per.ad}"/>
+                </p:column>
 
-            <p:column headerText="Soyad">
-                <h:outputText value="#{per.soyad}"/>
-            </p:column>
+                <p:column headerText="Soyad">
+                    <h:outputText value="#{per.soyad}"/>
+                </p:column>
 
-            <p:column headerText="Doğum Tarihi">
-                <h:outputText value="#{per.dogumTarihi}"/>
-            </p:column>
+                <p:column headerText="Doğum Tarihi">
+                    <h:outputText value="#{per.dogumTarihi}"/>
+                </p:column>
 
-            <p:column headerText="Telefon Numarası">
-                <h:outputText value="#{per.telNo}"/>
-            </p:column>
+                <p:column headerText="Telefon Numarası">
+                    <h:outputText value="#{per.telNo}"/>
+                </p:column>
 
-
-
-        </p:dataTable>
+            </p:dataTable>
+        </h:form>
     </p:panel>
 
 </h:body>

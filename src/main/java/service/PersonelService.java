@@ -9,7 +9,7 @@ import java.util.List;
 public class PersonelService implements IPersonelService {
 
     private List<Personel> personelList=new ArrayList<Personel>();
-    private Long idGenerator=0L;
+    private Long idGenerator=1L;
 
     public void kaydet(Personel personel) {
 

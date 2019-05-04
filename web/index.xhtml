@@ -93,6 +93,34 @@
         </h:form>
     </p:panel>
 
+    <p:panel>
+        <p:dataTable id="personel_listesi" var="per" value="#{personelView.personelList}">
+
+            <p:column headerText="Id">
+                <h:outputText value="#{per.id}"/>
+            </p:column>
+
+            <p:column headerText="Adı">
+                <h:outputText value="#{per.ad}"/>
+            </p:column>
+
+            <p:column headerText="Soyad">
+                <h:outputText value="#{per.soyad}"/>
+            </p:column>
+
+            <p:column headerText="Doğum Tarihi">
+                <h:outputText value="#{per.dogumTarihi}"/>
+            </p:column>
+
+            <p:column headerText="Telefon Numarası">
+                <h:outputText value="#{per.telNo}"/>
+            </p:column>
+
+
+
+        </p:dataTable>
+    </p:panel>
+
 </h:body>
 
 

@@ -67,6 +67,7 @@
 
                 <p:outputLabel value="Departman:"/>
                 <p:selectOneMenu id="departman_input" value="#{personelView.personel.departman}">
+                    <p:ajax event="itemSelect" update="unvan_input" listener="#{personelView.onDepartmanSelected}"/>
                     <f:selectItem noSelectionOption="true"
                                   itemLabel="Seçiniz.."
                                   itemValue="#{null}"/>

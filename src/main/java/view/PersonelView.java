@@ -101,6 +101,20 @@ public class PersonelView {
 
     }
 
+
+    public void onDepartmanSelected(SelectEvent selectEvent){
+
+        String tempDepartman= (String) selectEvent.getObject();
+
+        switch (tempDepartman){
+            case "Arge":
+                unvanMap.clear();
+                unvanMap.put(3, "Kıdemli");
+                unvanMap.put(6, "Proje Yöneticisi");
+                break;
+        }
+    }
+
     public Personel getPersonel() {
         return personel;
     }

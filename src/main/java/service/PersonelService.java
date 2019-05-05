@@ -1,5 +1,6 @@
 package service;
 
+import dao.PersonelDAO;
 import entity.Personel;
 
 import java.util.ArrayList;
@@ -11,6 +12,12 @@ public class PersonelService implements IPersonelService {
     private List<Personel> personelList=new ArrayList<Personel>();
     private Long idGenerator=1L;
     private static PersonelService instance;
+    private PersonelDAO personelDAO=new PersonelDAO();
+
+
+    private PersonelService(){
+
+    }
 
     /**
      * PersonelService nesnesinin birkere new anahtar sözcüğü ile oluşturulması için
@@ -31,7 +38,9 @@ public class PersonelService implements IPersonelService {
 
         if (personel!=null){
 
-            Personel yeniPersonel=new Personel();
+            personelDAO.kaydet(personel);
+
+            /*Personel yeniPersonel=new Personel();
 
             yeniPersonel.setId(idGenerator);
             yeniPersonel.setDepartman(personel.getDepartman());
@@ -50,14 +59,14 @@ public class PersonelService implements IPersonelService {
 
             idGenerator++;
 
-            personelList.add(yeniPersonel);
+            personelList.add(yeniPersonel);*/
 
         }
 
     }
 
     public List<Personel> personelListesiGetir() {
-        return personelList;
+        return personelDAO.findAll();
 
     }
 }

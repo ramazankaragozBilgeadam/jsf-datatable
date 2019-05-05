@@ -21,6 +21,7 @@ public class PersonelDAO extends BaseDAO {
 
         }catch (HibernateException ex){
             ex.printStackTrace();
+            transaction.rollback();
         }finally {
             transaction.commit();
         }
@@ -39,7 +40,9 @@ public class PersonelDAO extends BaseDAO {
 
         }catch (HibernateException ex){
             ex.printStackTrace();
+            transaction.rollback();
         }finally {
+            transaction.commit();
 
         }
 

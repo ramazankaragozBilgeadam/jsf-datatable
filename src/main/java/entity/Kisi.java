@@ -1,10 +1,11 @@
 package entity;
 
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "kisi")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Kisi extends BaseEntity{
 
     @Column(name = "ad",nullable = false,length = 30)

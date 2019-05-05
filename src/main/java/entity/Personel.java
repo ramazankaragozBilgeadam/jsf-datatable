@@ -1,13 +1,22 @@
 package entity;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "personel")
 public class Personel extends Kisi{
 
+    @Column(name = "maas",nullable = false)
     private Double maas;
+    @Temporal(TemporalType.DATE)
+    @Column(name = "is_giris_tarihi")
     private Date iseGirisTarih;
+    @Column(name = "sicil_no")
     private String sicilNo;
+    @Column(name = "departman")
     private String departman;
+    @Column(name = "unvan")
     private String unvan;
 
     public Personel(){

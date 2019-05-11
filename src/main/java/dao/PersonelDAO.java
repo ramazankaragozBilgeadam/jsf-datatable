@@ -19,6 +19,7 @@ public class PersonelDAO extends BaseDAO {
             transaction=getSession().beginTransaction();
             getSession().save(personel);
 
+
         }catch (HibernateException ex){
             ex.printStackTrace();
             transaction.rollback();
